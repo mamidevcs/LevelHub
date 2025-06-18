@@ -1,72 +1,82 @@
-🎮 LevelHub
-LevelHub, oyun geliştiricilerin birbirleriyle tanışabileceği, soru sorabileceği ve yardım alabileceği bir forum sitesidir.
-Kullanıcılar konu oluşturabilir, gönderilerine etiket ekleyebilir, yorum yapabilir ve gönderileri oylayabilir.
-Ayrıca kullanıcılar arasında özel mesajlaşma sistemi de mevcuttur. Admin paneli üzerinden kullanıcı ve etiket yönetimi yapılabilir.
+# 🎮 LevelHub
 
-📌 Proje Tanımı
-Bu proje, oyun geliştiricilerin bir araya gelip bilgi alışverişinde bulunabileceği bir topluluk platformu oluşturmak amacıyla geliştirilmiştir.
-Amaç, yardımlaşma ve öğrenmeyi teşvik eden, aktif bir geliştirici topluluğu kurmaktır.
+**LevelHub**, oyun geliştiricilerin birbiriyle tanışabileceği, soru sorabileceği ve yardım alabileceği bir forum sitesidir.  
+Kullanıcılar konu açabilir, etiket ekleyebilir, yorum yapabilir ve gönderileri oylayabilir.  
+Ayrıca kullanıcılar arasında özel mesajlaşma ve admin paneli gibi gelişmiş özellikler de mevcuttur.
 
-Genel özellikler:
+---
 
-Konu oluşturma ve düzenleme
+## 🚀 Proje Tanımı
 
-Etiket ekleme
+Bu proje, oyun geliştirme topluluğunun birbirine destek olabileceği bir ortam sunmayı amaçlar.  
+**Amaç:** Yardımsever bir topluluk oluşturmak, bilgi paylaşımını kolaylaştırmak.  
+**Genel İşleyiş:**
+- Konu oluşturma, etiketleme, yorum yapma
+- Upvote/downvote ile gönderi oylama
+- Kullanıcılar arası özel mesajlaşma
+- Admin paneli üzerinden kullanıcı ve etiket yönetimi
 
-Gönderilere yorum yapma
+---
 
-Upvote ve downvote ile oylama
+## 🧰 Kullanılan Teknolojiler
 
-Kullanıcılar arası özel mesajlaşma
+- **Next.js** – React tabanlı framework
+- **React** – UI bileşenleri için
+- **Prisma ORM** – Veritabanı işlemleri için
+- **SQLite** – Hafif ve kolay veritabanı
+- **TailwindCSS** – CSS stillendirme
+- **Shadcn/UI** – Arayüz bileşenleri (isteğe bağlı)
+- **Zustand / Context API** – State yönetimi (kullandıysan belirt)
 
-Admin paneli ile kullanıcı ve etiket yönetimi
+---
 
-🧰 Kullanılan Teknolojiler
-Next.js
+## ⚙️ Kurulum Talimatları
 
-React
+1. Bu repoyu klonla:
+   ```bash
+   git clone https://github.com/kullaniciadi/LevelHub.git
+   cd LevelHub
+Gerekli paketleri yükle:
 
-Prisma ORM
+bash
+Kopyala
+Düzenle
+npm install
+.env dosyasını oluştur ve şu veritabanı bağlantısını ekle:
 
-SQLite
+ini
+Kopyala
+Düzenle
+DATABASE_URL="file:./dev.db"
+Veritabanı migrasyonlarını çalıştır:
 
-TailwindCSS
+bash
+Kopyala
+Düzenle
+npx prisma migrate dev --name init
+Uygulamayı başlat:
 
-Shadcn UI
+bash
+Kopyala
+Düzenle
+npm run dev
+Tarayıcında aç:
 
-⚙️ Kurulum Talimatları
-Proje dosyalarını indir ya da klonla
-
-Bağımlılıkları yükle (npm install)
-
-.env dosyasına veritabanı bağlantı bilgisini ekle
-
-Veritabanını migrate et
-
-Uygulamayı başlat ve tarayıcıda çalıştır
-
+arduino
+Kopyala
+Düzenle
+http://localhost:3000
 🔐 Admin Giriş Bilgileri
-E-posta: admin@example.com
-
+txt
+Kopyala
+Düzenle
+E-posta: admin@example.com  
 Şifre: admin123
-
-Bu hesap sadece test amaçlıdır.
+Bu hesap sadece test amaçlıdır. Gerçek uygulamalarda güçlü parola ve güvenlik önlemleri eklenmelidir.
 
 📎 Notlar
-Admin paneline yalnızca admin rolüne sahip kullanıcılar erişebilir
+admin rolüne sahip kullanıcılar admin paneline erişebilir.
 
-Admin, kullanıcıları ve etiketleri yönetebilir
+Admin panelinden kullanıcılar silinebilir, roller düzenlenebilir ve konu etiketleri eklenebilir/silinebilir.
 
-Kullanıcılar, sadece kendi konularını düzenleyip silebilir
-
-Upvote/downvote sistemi, kullanıcıların saygınlık puanını etkiler
-
-Ana sayfada gönderiler:
-
-En çok upvote alanlar
-
-En çok yorum alanlar
-
-En son eklenenler olarak sıralanır
-
-Arama çubuğu ile konular aranabilir
+Upvote/downvote sistemi kullanıcı saygınlık puanını etkiler.
