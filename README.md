@@ -43,6 +43,7 @@ npm install
 
 
 DATABASE_URL="file:./dev.db"
+
 Veritabanı migrasyonlarını çalıştır:
 
  ```
