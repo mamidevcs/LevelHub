@@ -32,7 +32,7 @@ Bu proje, oyun geliştirme topluluğunun birbirine destek olabileceği bir ortam
 
 1. Bu repoyu klonla:
    ```
-   git clone https://github.com/kullaniciadi/LevelHub.git
+   git clone https://github.com/mamidevcs/LevelHub.git
    cd LevelHub
 Gerekli paketleri yükle:
 
