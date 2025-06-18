@@ -1,11 +1,11 @@
-LevelHub
+🎮 LevelHub
 LevelHub, oyun geliştiricilerin birbirleriyle tanışabileceği, soru sorabileceği ve yardım alabileceği bir forum sitesidir.
-Kullanıcılar konu açabilir, gönderilerine etiket ekleyebilir, yorum yapabilir ve gönderileri oylayabilir.
-Ayrıca kullanıcılar özel mesajlaşma sistemi ile birbirleriyle iletişim kurabilir. Admin paneli sayesinde kullanıcı ve etiket yönetimi yapılabilir.
+Kullanıcılar konu oluşturabilir, gönderilerine etiket ekleyebilir, yorum yapabilir ve gönderileri oylayabilir.
+Ayrıca kullanıcılar arasında özel mesajlaşma sistemi de mevcuttur. Admin paneli üzerinden kullanıcı ve etiket yönetimi yapılabilir.
 
-Proje Tanımı
-Bu proje, oyun geliştiricilerin birbirleriyle bilgi paylaşımında bulunabileceği bir ortam oluşturmak amacıyla geliştirilmiştir.
-Sorunlarını, projelerini ya da sorularını paylaşabilecekleri bir topluluk platformudur.
+📌 Proje Tanımı
+Bu proje, oyun geliştiricilerin bir araya gelip bilgi alışverişinde bulunabileceği bir topluluk platformu oluşturmak amacıyla geliştirilmiştir.
+Amaç, yardımlaşma ve öğrenmeyi teşvik eden, aktif bir geliştirici topluluğu kurmaktır.
 
 Genel özellikler:
 
@@ -21,7 +21,7 @@ Kullanıcılar arası özel mesajlaşma
 
 Admin paneli ile kullanıcı ve etiket yönetimi
 
-Kullanılan Teknolojiler
+🧰 Kullanılan Teknolojiler
 Next.js
 
 React
@@ -32,61 +32,41 @@ SQLite
 
 TailwindCSS
 
-Shadcn (UI bileşenleri için)
+Shadcn UI
 
-Kurulum Talimatları
-Projeyi klonla:
+⚙️ Kurulum Talimatları
+Proje dosyalarını indir ya da klonla
 
-bash
-Kopyala
-Düzenle
-git clone https://github.com/kullaniciadi/LevelHub.git
-cd LevelHub
-Gerekli bağımlılıkları yükle:
+Bağımlılıkları yükle (npm install)
 
-nginx
-Kopyala
-Düzenle
-npm install
-.env dosyası oluştur ve içine şu satırı ekle:
+.env dosyasına veritabanı bağlantı bilgisini ekle
 
-ini
-Kopyala
-Düzenle
-DATABASE_URL="file:./dev.db"
-Veritabanı kur:
+Veritabanını migrate et
 
-csharp
-Kopyala
-Düzenle
-npx prisma migrate dev --name init
-Uygulamayı çalıştır:
+Uygulamayı başlat ve tarayıcıda çalıştır
 
-arduino
-Kopyala
-Düzenle
-npm run dev
-Tarayıcıdan şu adrese git:
-
-arduino
-Kopyala
-Düzenle
-http://localhost:3000
-Admin Giriş Bilgileri
-Test için kullanabileceğiniz admin hesabı:
-
+🔐 Admin Giriş Bilgileri
 E-posta: admin@example.com
+
 Şifre: admin123
 
-Not: Bu bilgiler sadece test amaçlıdır.
+Bu hesap sadece test amaçlıdır.
 
-Notlar
-Sadece "admin" rolüne sahip kullanıcılar admin paneline erişebilir.
+📎 Notlar
+Admin paneline yalnızca admin rolüne sahip kullanıcılar erişebilir
 
-Admin panelinde kullanıcı listesi görüntülenebilir, silinebilir veya yetkileri değiştirilebilir.
+Admin, kullanıcıları ve etiketleri yönetebilir
 
-Admin, yeni etiketler ekleyebilir ve gönderileri silebilir.
+Kullanıcılar, sadece kendi konularını düzenleyip silebilir
 
-Upvote ve downvote sistemi kullanıcıların saygınlık puanını etkiler.
+Upvote/downvote sistemi, kullanıcıların saygınlık puanını etkiler
 
-Arama çubuğu ile konular arasında filtreleme yapılabilir.
+Ana sayfada gönderiler:
+
+En çok upvote alanlar
+
+En çok yorum alanlar
+
+En son eklenenler olarak sıralanır
+
+Arama çubuğu ile konular aranabilir
