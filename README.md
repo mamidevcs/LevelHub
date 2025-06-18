@@ -36,23 +36,27 @@ Bu proje, oyun geliştirme topluluğunun birbirine destek olabileceği bir ortam
    cd LevelHub
 Gerekli paketleri yükle:
 
-
+ ```
 npm install
+ ```
 .env dosyasını oluştur ve şu veritabanı bağlantısını ekle:
 
 
 DATABASE_URL="file:./dev.db"
 Veritabanı migrasyonlarını çalıştır:
 
-
+ ```
 npx prisma migrate dev --name init
+ ```
 Uygulamayı başlat:
 
-
+ ```
 npm run dev
+ ```
 Tarayıcında aç:
 
 http://localhost:3000
+
 🔐 Admin Giriş Bilgileri
 
 E-posta: admin@mail.com  
