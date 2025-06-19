@@ -1,0 +1,67 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id       Int     @id @default(autoincrement())
+  username String  @unique
+  email    String  @unique
+  password String
+  bio      String?
+  role     String  @default("user") // "admin" veya "user"
+  topics   Topic[]  // Kullanıcının konuları
+  comments Comment[]
+  createdAt DateTime @default(now())
+
+
+  messagesSent    Message[] @relation("sender")
+  messagesReceived Message[] @relation("receiver")
+
+  upvotedTopics    Topic[]   @relation("UserUpvotes")
+  downvotedTopics  Topic[]   @relation("UserDownvotes")
+}
+
+model Message {
+  id         Int    @id @default(autoincrement())
+  content    String
+  senderId   Int
+  receiverId Int
+  sender     User   @relation("sender", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver   User   @relation("receiver", fields: [receiverId], references: [id], onDelete: Cascade)
+}
+
+model Topic {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  tags Tag[] @relation("TopicTags")
+  createdAt DateTime @default(now())
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  Int
+  comments  Comment[] 
+
+  upvotes   User[]   @relation("UserUpvotes") 
+  downvotes User[]   @relation("UserDownvotes")
+}
+model Tag {
+  id     Int     @id @default(autoincrement())
+  name   String  @unique
+  topics Topic[] @relation("TopicTags")
+}
+model Comment {
+  id        Int     @id @default(autoincrement())
+  content   String
+  topic     Topic   @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  topicId   Int
+  author    User    @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  Int
+  createdAt DateTime @default(now())
+}
